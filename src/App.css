@@ -383,7 +383,7 @@ div.react-select__control {
 	border: none;
 	outline: none;
 	background: transparent;
-	cursor: poin 0ter;
+	cursor: pointer;
 }
 
 .remove__btn > svg {
