@@ -29,11 +29,11 @@ div.react-select__control {
 	border: 1px solid black;
 }
 
-.css-art2ul-ValueContainer2 {
+.react-select__value-container {
 	padding: 0.75em !important;
 }
 
-.css-art2ul-ValueContainer2 div {
+.react-select__value-container div {
 	padding: 0;
 }
 
