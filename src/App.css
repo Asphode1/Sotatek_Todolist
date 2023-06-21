@@ -103,7 +103,7 @@ div.react-select__control {
 .list__wrapper {
 	background: white;
 	padding: 2em 1em 1em;
-	overflow-y: auto;
+	overflow-y: scroll;
 	border-radius: 0.25em;
 	box-shadow: 0 0 4px 2px #0001;
 	margin: 0 1em;
