@@ -1,7 +1,12 @@
 import { forwardRef } from 'react'
 import { IoCalendarOutline } from 'react-icons/io5'
 
-const CustomDatepicker = forwardRef(({ value, onClick }, ref) => {
+interface CustomDatepickerProps {
+	onClick?: (e: React.MouseEvent<HTMLElement>) => void
+	value?: string
+}
+
+const CustomDatepicker = forwardRef<HTMLButtonElement, CustomDatepickerProps>(({ value, onClick }, ref) => {
 	return (
 		<button type="button" onClick={onClick} ref={ref} className="custom__datepicker">
 			<span>{value}</span>

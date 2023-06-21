@@ -19,6 +19,7 @@ export default function Container() {
 		if (val.length) {
 			setList(() => tasks.filter((e) => e.name.toLowerCase().indexOf(val.toLowerCase()) >= 0))
 		} else setList(tasks)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [val])
 
 	return (
