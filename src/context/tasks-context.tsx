@@ -63,7 +63,10 @@ export default function TasksContextProvider({ children }: { children: ReactNode
 		if (str) {
 			const data = JSON.parse(str) as TaskProps[]
 			setTasks(data)
-		} else localStorage.setItem('tasks', JSON.stringify(DefaultList))
+		} else {
+			setTasks(DefaultList)
+			localStorage.setItem('tasks', JSON.stringify(DefaultList))
+		}
 	}, [])
 
 	return <TasksContext.Provider value={{ tasks, setTasks }}>{children}</TasksContext.Provider>
