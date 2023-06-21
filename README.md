@@ -1,4 +1,4 @@
-<a target="_blank" rel="noopener noreferrer" href='https://asphode1.github.io/Sotatek_Todolist/'><img src='/assets/main.png' /></a>
+<img src='/assets/main.png' />
 
 # Project Todo List
 This is a demo Todo list website that I created.
