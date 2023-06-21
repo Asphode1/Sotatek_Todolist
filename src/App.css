@@ -1,42 +1,424 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.main {
+	padding: 1.5em 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.react-datepicker-wrapper {
+	width: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li.notask {
+	text-align: center;
+	font-size: 1.25em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+div.react-select__placeholder,
+div.react-select__indicators > div {
+	color: black;
 }
 
-.card {
-  padding: 2em;
+div.react-select__indicators > span {
+	background: black;
 }
 
-.read-the-docs {
-  color: #888;
+div.react-select__control {
+	border: 1px solid black;
+}
+
+.css-art2ul-ValueContainer2 {
+	padding: 0.75em !important;
+}
+
+.css-art2ul-ValueContainer2 div {
+	padding: 0;
+}
+
+.main > h1 {
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+.add__btn {
+	position: fixed;
+	z-index: 3;
+	bottom: 0.5em;
+	right: 0.5em;
+	width: 1.5em;
+	height: 1.5em;
+	cursor: pointer;
+	border-radius: 50%;
+	background: white;
+	box-shadow: 0 0 5px 2px #0001;
+	padding: 0;
+	font-size: 3em;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: bottom 0.25s ease-in-out;
+}
+
+.add__btn.add__btn__shifted {
+	bottom: 2em;
+}
+
+.container {
+	width: 100%;
+}
+
+.list__wrapper::-webkit-scrollbar {
+	width: 5px;
+}
+
+.list__wrapper::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+.list__wrapper::-webkit-scrollbar-thumb {
+	background: #aaa;
+}
+
+.list__wrapper::-webkit-scrollbar-thumb:hover {
+	background: #888;
+}
+
+.search__bar {
+	padding: 0.75em 1em;
+	border-radius: 0.25em;
+	box-shadow: 0 0 4px 2px #0001;
+	margin: 0 1em 1em;
+	background: white;
+}
+
+.search__input {
+	display: inline-block;
+	width: 100%;
+	padding: 0.75em 1em;
+}
+
+.list__wrapper {
+	background: white;
+	padding: 2em 1em 1em;
+	overflow-y: scroll;
+	border-radius: 0.25em;
+	box-shadow: 0 0 4px 2px #0001;
+	margin: 0 1em;
+	max-height: calc(100vh - 13em);
+	transition: max-height 0.25s ease-in-out;
+}
+
+.list__wrapper.list__wrapper__shrink {
+	max-height: calc(100vh - 18em);
+}
+
+.task__item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	gap: 1em;
+	height: 5em;
+	border-radius: 0.25em;
+	position: relative;
+	z-index: 2;
+	transition: box-shadow 0.25s ease-in-out;
+}
+
+.task__item p {
+	font-size: 1.2em;
+}
+
+.task__red {
+	background: #e8beb5;
+}
+
+.task__yellow {
+	background: #e8e0b5;
+}
+
+.task__green {
+	background: #b5e8bc;
+}
+
+.task__expanded {
+	padding: 0 1em;
+	border-radius: 0.25em;
+	position: relative;
+	transform: translateY(-10px);
+	z-index: 0;
+	overflow: hidden;
+}
+
+.expand__green {
+	background: #d5f2d9;
+}
+
+.expand__yellow {
+	background: #f2efda;
+}
+
+.expand__red {
+	background: #f0e2df;
+}
+
+.checkbox {
+	width: 2em;
+	height: 2em;
+	border-radius: 0.1em;
+	background: transparent;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox > svg {
+	font-size: 2em;
+}
+
+.checkbox.checked {
+	background: #333;
+}
+
+.checkbox.checked svg {
+	fill: white;
+}
+
+.float__right {
+	width: max-content;
+	height: 100%;
+	margin-right: 0;
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.transform__transition {
+	transition: transform 0.2s ease-in-out;
+}
+
+.transform__z {
+	transform: rotateX(180deg);
+}
+
+.add__modal__wrapper {
+	position: sticky;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background: #0005;
+	z-index: 5;
+}
+
+.add__modal {
+	border-radius: 0.5em;
+	background: white;
+	padding: 1em 2em 2em;
+	width: 1280px;
+	margin: 0 2em;
+	text-align: center;
+}
+
+.add__modal h1 {
+	margin-bottom: 1em;
+}
+
+.task__form {
+	width: 100%;
+	margin: 2em 0 1em;
+}
+
+.task__form input,
+.task__form textarea {
+	display: inline-block;
+	width: 100%;
+}
+
+.option__btn {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.option__btn > div {
+	flex: 1;
+}
+
+.custom__datepicker {
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 1em;
+	font-size: 1em;
+	background: white;
+	border: 1px solid black;
+	border-radius: 0.25em;
+	transition: border 0.25s;
+	display: flex;
+}
+
+.custom__datepicker:hover {
+	border: 1px solid #888;
+}
+
+.custom__datepicker__right {
+	position: relative;
+}
+
+.custom__datepicker__line {
+	display: inline-block;
+	position: absolute;
+	left: -0.75em;
+	border-left: 1px solid black;
+	height: 2em;
+}
+
+.form__btn {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 2em;
+}
+
+.form__btn > button {
+	flex: 1;
+	padding: 0.5em;
+	border: none;
+	border-radius: 0.25em;
+	font-size: 1.25em;
+	background: #0284cf;
+	cursor: pointer;
+	transition: background 0.2s;
+	color: white;
+}
+
+.form__btn button:hover {
+	background: #086aa3;
+}
+
+.form__btn button.cancel__btn {
+	background: #f0f0f0;
+	color: black;
+}
+
+.form__btn button.cancel__btn:hover {
+	background: #ddd;
+}
+
+.bulk__action__wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #e0e0e0;
+	height: 5em;
+	margin: auto;
+	z-index: 4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bulk__action {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	max-width: calc(1280px - 4em);
+	padding: 0 1em;
+}
+
+.bulk__action > span {
+	font-size: 1.25em;
+}
+
+.done__btn {
+	padding: 0.5em;
+	border: none;
+	border-radius: 0.25em;
+	font-size: 1.25em;
+	background: #0284cf;
+	cursor: pointer;
+	transition: background 0.2s;
+	color: white;
+	width: 6em;
+}
+
+.remove__bulk__btn {
+	background: #e34d4d;
+	border: none;
+	cursor: pointer;
+	transition: background 0.2s;
+	color: white;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	font-size: 1.25em;
+	width: 6em;
+}
+
+.remove {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.expand {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.remove__btn {
+	border: none;
+	outline: none;
+	background: transparent;
+	cursor: poin 0ter;
+}
+
+.remove__btn > svg {
+	font-size: 2em;
+	pointer-events: none;
+}
+
+.err__input {
+	border: 2px solid red;
+}
+
+.err__text {
+	color: red;
+	text-align: left;
+}
+
+.react-datepicker-popper {
+	z-index: 10 !important;
+}
+
+@media only screen and (max-width: 768px) {
+	textarea {
+		min-height: 4em;
+		height: 4em;
+	}
+	.option__btn,
+	.form__btn {
+		flex-direction: column;
+	}
+	.option__btn > div {
+		width: 100%;
+	}
+
+	.add__btn {
+		width: 1.25em;
+		height: 1.25em;
+	}
 }
